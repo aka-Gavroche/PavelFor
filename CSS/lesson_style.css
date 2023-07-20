@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/*Файл обнулення стилів за замовчуванням*/
+/*Видаляємо всі відступи і межі*/
+/*Зірочка означає застосування даних параметрів до всіх-всіх тегів html-сторінки*/
+* {
+  padding: 0;
+  /*внутрішній відступ*/
+  margin: 0;
+  /*Зовнішній відступ*/
+  border: 0;
+  /*межа-контур*/
+}
+
+/*Згідно зі специфікацією CSS ширина блоку складається з ширини контенту (width), значень відступів (margin), полів (padding) і кордонів (border).*/
+/*Аналогічно йде і з висотою блоку.*/
+/*box-sizing дозволяє змінити цей алгоритм, щоб властивості width і height задавали розміри не контента, а розміри блоку.*/
+/*:before і :after - псевдоелементи, які дають можливість відображати бажаний контент до/після вмісту елемента, до якого він додається.*/
+*, *:before, :after {
+  box-sizing: border-box;
+  /*застосовується для зміни алгоритма розрахунку ширини і висоти елемента*/
+  -moz-box-sizing: border-box;
+  /*Те саме для Firefox*/
+  -webkit-box-sizing: border-box;
+  /*Safari до версії 5.0, Chrome до версії 10.0, Android до версії 4.0 і iOS Safari до версії 5.0*/
+}
+
+/*Видаляємо лінії обводки у деяких браузерів*/
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+/*Робимо вказані нижче теги блочними*/
+nav, footer, header, aside {
+  display: block;
+}
+
+/*Урівнюємо поведінку шрифтів та елементів для різних браузерів*/
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+/*псевдоелемент, котрий видаляє хрестик із форми вводу у браузері Internet Explorer*/
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*Псевдоелемент, котрий видаляє лишні відступи і пропуски у браузері Firefox*/
+/*В даному випадку застосований до кнопки*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background: url("../IMG/Background.png") center/cover no-repeat;
+  row-gap: 15px;
+}
+
+.button {
+  width: 300px;
+  height: 100px;
+  max-width: 100%;
+  background-color: #009faa63;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 50px;
+  text-shadow: 1px 1px #111;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 5px 4px #000;
+          box-shadow: 0px 0px 5px 4px #000;
+}
+.button_animation {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.button_animation:hover {
+  scale: 1.1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #0abe8263;
+  color: white;
+  -webkit-box-shadow: 0px 0px 7px 6px #000;
+          box-shadow: 0px 0px 7px 6px #000;
+}
+
+.button_1 {
+  position: relative;
+  z-index: 5;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #009faa87;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+}
+.button_1:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0;
+}
+
+.button_2 {
+  position: absolute;
+  z-index: 1;
+  font-size: 35px;
+  background: url("../IMG/GAY.jpg") center/cover no-repeat;
+}
